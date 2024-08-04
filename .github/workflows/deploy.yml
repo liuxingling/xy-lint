@@ -23,6 +23,8 @@ jobs:
       - name: Install and Build
         run: |
           npm i -g pnpm
+          pnpm -v
+          node -v
           pnpm run init
           pnpm run docs:build
         env:
