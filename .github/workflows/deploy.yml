@@ -1,0 +1,38 @@
+name: Build and Deploy
+#每次推送到 master 分支时都会触发这个工作流
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    #指定在最新的 Ubuntu 环境中运行
+    runs-on: ubuntu-latest
+    steps:
+      #检出代码
+      - name: Checkout  ️
+        uses: actions/checkout@v3
+
+      #设置 Node.js 版本
+      - name: lock npm version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.18.0
+
+      #安装和构建
+      - name: Install and Build
+        run: |
+          npm i -g pnpm
+          pnpm run init
+          pnpm run docs:build
+        env:
+          #增加 Node.js 的内存限制
+          NODE_OPTIONS: "--max_old_space_size=4096"
+      #部署到 GitHub Pages
+      #使用 JamesIves/github-pages-deploy-action 动作将构建生成的静态文件部署到 gh-pages 分支
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.2.0
+        with:
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
