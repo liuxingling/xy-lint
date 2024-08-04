@@ -17,7 +17,7 @@ jobs:
       - name: lock npm version
         uses: actions/setup-node@v3
         with:
-          node-version: 18.12.0
+          node-version: 20.x
 
       #安装和构建
       - name: Install and Build
