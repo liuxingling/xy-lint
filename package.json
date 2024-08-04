@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +15,13 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@types/node": "^22.1.0",
+    "@vuepress/bundler-vite": "2.0.0-rc.14",
+    "@vuepress/theme-default": "2.0.0-rc.40",
     "husky": "^9.1.4",
-    "lerna": "^8.1.7"
+    "lerna": "^8.1.7",
+    "vue": "^3.4.35",
+    "vuepress": "2.0.0-rc.14"
   },
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^8.0.0"
