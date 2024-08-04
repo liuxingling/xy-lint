@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+#这是一个 shebang 行，指定使用 /usr/bin/env 查找 sh 解释器来执行脚本。它使得脚本在不同的环境中都能正确找到 sh 解释器
+# 在当前 shell 中执行 husky.sh 脚本
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 运行 commitlint 检查文件路径提交的信息是否符合规范
+# --edit $1：传递给 commitlint 的参数，$1：commit-msg 钩子收到的文件路径
+npx commitlint --edit $1

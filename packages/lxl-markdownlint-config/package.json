@@ -1,0 +1,19 @@
+{
+  "name": "lxl-markdownlint-config",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "刘 星玲 <286735685@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/lxl-markdownlint-config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/lxl-markdownlint-config.test.js"
+  }
+}

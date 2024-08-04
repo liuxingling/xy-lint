@@ -1,0 +1,19 @@
+{
+  "name": "lxl-eslint-config",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "刘 星玲 <286735685@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/lxl-eslint-config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/lxl-eslint-config.test.js"
+  }
+}

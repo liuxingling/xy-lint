@@ -1,0 +1,13 @@
+{
+  "name": "lxl-commitlint-config",
+  "version": "0.0.0",
+  "description": "星爷 Git规范",
+  "author": "xingye",
+  "homepage": "",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuxingling/lxl-fe-lint-cli"
+  }
+}
