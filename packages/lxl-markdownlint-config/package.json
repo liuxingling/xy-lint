@@ -1,19 +1,13 @@
 {
   "name": "lxl-markdownlint-config",
   "version": "0.0.0",
-  "description": "> TODO: description",
-  "author": "刘 星玲 <286735685@qq.com>",
+  "description": "星爷 MarkDown 规范",
+  "author": "xingye",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/lxl-markdownlint-config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "scripts": {
-    "test": "node ./__tests__/lxl-markdownlint-config.test.js"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuxingling/lxl-fe-lint-cli"
   }
 }

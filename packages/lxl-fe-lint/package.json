@@ -1,0 +1,47 @@
+{
+  "name": "lxl-fe-lint",
+  "version": "1.0.0",
+  "description": "前端编码规范工程化脚手架",
+  "bin": "./lib/cli.js",
+  "main": "./lib/index.js",
+  "scripts": {
+    "dev": "npm run copyfiles && tsc -w",
+    "build": "rm -rf lib && npm run copyfiles && tsc",
+    "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib",
+    "test": "npm run build && jest",
+    "coverage": "nyc jest --silent --forceExit",
+    "prepublishOnly": "npm run test"
+  },
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
+  "keywords": [
+    "lint",
+    "cli"
+  ],
+  "author": "liuxingling",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "command-exists": "^1.2.9",
+    "commander": "^12.1.0",
+    "cross-spawn": "^7.0.3",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "inquirer": "^10.1.8",
+    "lodash": "^4.17.21",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/command-exists": "^1.2.3",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/ejs": "^3.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0",
+    "@types/lodash": "^4.17.7"
+  }
+}

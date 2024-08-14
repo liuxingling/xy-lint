@@ -1,0 +1,24 @@
+# http://editorconfig.org
+root = true
+
+[*]
+# 指定缩进样式为空格
+indent_style = space
+# 设置缩进大小为2个空格
+indent_size = 2
+# 设置行尾字符为Unix风格的换行符（LF）。
+end_of_line = lf
+# 设置文件编码为UTF-8
+charset = utf-8
+# 删除行末的空白符
+trim_trailing_whitespace = true
+# 确保文件末尾有一个新行
+insert_final_newline = true
+
+[*.md]
+# 不删除行末的空白符
+trim_trailing_whitespace = false
+
+[Makefile]
+# 指定缩进样式为 tab
+indent_style = tab
