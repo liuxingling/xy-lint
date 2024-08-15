@@ -7,13 +7,13 @@ import path from 'path';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
 import spawn from 'cross-spawn'; // 运行子进程的工具，用于执行 shell 命令
-import update from './update.ts';
-import npmType from '../utils/npm-type.ts';
-import log from '../utils/log.ts';
-import conflictResolve from '../utils/conflict-resolve.ts';
+import update from './update';
+import npmType from '../utils/npm-type';
+import log from '../utils/log';
+import conflictResolve from '../utils/conflict-resolve';
 import generateTemplate from '../utils/generate-template';
 import { PROJECT_TYPES, PKG_NAME } from '../utils/constants';
-import type { InitOptions, PKG } from '../types.ts';
+import type { InitOptions, PKG } from '../types';
 
 // 当前执行的步骤
 let step = 0;
