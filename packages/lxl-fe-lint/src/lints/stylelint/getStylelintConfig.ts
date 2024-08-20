@@ -30,7 +30,7 @@ export function getStylelintConfig(opts: ScanOptions, pkg: PKG, config: Config):
     if (lintConfigFiles.length === 0 && !pkg.stylelint) {
       // 使用默认的 lint 配置
       lintConfig.config = {
-        extends: 'stylelint-config-encode',
+        extends: 'lxl-stylelint-config',
       };
     }
 

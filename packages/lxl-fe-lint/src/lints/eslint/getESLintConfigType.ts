@@ -9,10 +9,6 @@ import type { PKG } from '../../types';
  * 获取 ESLint 配置类型
  * @param cwd
  * @param pkg
- * @returns eslint-config-encode/index
- * @returns eslint-config-encode/react
- * @returns eslint-config-encode/typescript/index
- * @returns eslint-config-encode/typescript/react
  */
 export function getESLintConfigType(cwd: string, pkg: PKG): string {
   // 查找所有非 node_modules 目录下的 .ts 或 .tsx 文件

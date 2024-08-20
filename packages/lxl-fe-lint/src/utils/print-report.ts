@@ -80,7 +80,7 @@ export default (results: ScanResult[], fix: boolean): void => {
 
   // 扫描日志，预期:
   // ✖ x problems (y errors, z warnings)
-  // y error and z warnings potentially fixable with the `encode-fe-lint fix`
+  // y error and z warnings potentially fixable with the `lxl-fe-lint fix`
   //
   // ✔ no problems
   // 如果没有进行修复操作且存在错误或警告，输出错误摘要
