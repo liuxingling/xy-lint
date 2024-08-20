@@ -1,6 +1,6 @@
 {
   "name": "lxl-fe-lint",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "前端编码规范工程化脚手架",
   "bin": {
     "lxl-fe-lint": "./lib/cli.js"
@@ -9,10 +9,7 @@
   "scripts": {
     "dev": "npm run copyfiles && tsc -w",
     "build": "rm -rf lib && npm run copyfiles && tsc",
-    "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib",
-    "test": "npm run build && jest",
-    "coverage": "nyc jest --silent --forceExit",
-    "prepublishOnly": "npm run test"
+    "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib"
   },
   "files": [
     "lib/"
@@ -35,13 +32,22 @@
     "cross-spawn": "^7.0.3",
     "ejs": "^3.1.10",
     "eslint": "^9.9.0",
+    "execa": "^9.3.1",
+    "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
     "inquirer": "^7.3.3",
+    "is-docker": "^3.0.0",
     "lodash": "^4.17.21",
+    "lxl-markdownlint-config": "^0.0.0",
     "markdownlint": "^0.34.0",
+    "markdownlint-rule-helpers": "^0.25.0",
     "ora": "^5.1.0",
-    "stylelint": "^14.3.0"
+    "prettier": "^3.3.3",
+    "strip-ansi": "^7.1.0",
+    "stylelint": "^14.3.0",
+    "terminal-link": "^3.0.0",
+    "text-table": "^0.2.0"
   },
   "devDependencies": {
     "@types/command-exists": "^1.2.3",

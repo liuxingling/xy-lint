@@ -1,0 +1,3 @@
+{
+  "extends": "./packages/lxl-markdownlint-config/index.json"
+}

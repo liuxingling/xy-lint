@@ -1,4 +1,4 @@
 {
-	"cSpell.words": ["liuxingling", "xy", "commitlint", "stylelint", "vuepress", "iceworks", "stylelintrc", "kylerc", "copyfiles"],
+	"cSpell.words": ["liuxingling", "xy", "commitlint", "stylelint", "vuepress", "iceworks", "stylelintrc", "kylerc", "copyfiles", "conventionalcommits", "lintrc", "lintignore", "stylelintignore", "execa", "ACMR", "dirpath"],
 	"git.ignoreLimitWarning": true
 }
