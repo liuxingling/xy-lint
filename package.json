@@ -20,6 +20,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
     "@types/node": "^22.1.0",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/theme-default": "2.0.0-rc.40",
