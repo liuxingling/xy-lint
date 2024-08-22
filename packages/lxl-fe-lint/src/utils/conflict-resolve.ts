@@ -35,24 +35,30 @@ const packagePrefixesToRemove = [
 ];
 
 /**
- * 待删除的无用配置
+ * 待删除的无用配置（所有的lint文件）
  * 根据项目的当前工作目录 (cwd) 查找项目中存在的配置文件，并返回这些文件路径的数组
  * @param cwd
  */
 const checkUselessConfig = (cwd: string): string[] => {
-  return ([] as string[])
-    .concat(glob.sync('.eslintrc?(.@(yaml|yml|json))', { cwd }))
-    .concat(glob.sync('.stylelintrc?(.@(yaml|yml|json))', { cwd }))
-    .concat(glob.sync('.markdownlint@(rc|.@(yaml|yml|jsonc))', { cwd }))
-    .concat(
-      glob.sync('.prettierrc?(.@(cjs|config.js|config.cjs|yaml|yml|json|json5|toml))', { cwd }),
-    )
-    .concat(glob.sync('tslint.@(yaml|yml|json)', { cwd }))
-    .concat(glob.sync('.kylerc?(.@(yaml|yml|json))', { cwd }));
+  const patterns = [
+    '.eslintrc?(.@(yaml|yml|json))',
+    '.stylelintrc?(.@(yaml|yml|json))',
+    '.markdownlint@(rc|.@(yaml|yml|jsonc))',
+    '.prettierrc?(.@(cjs|config.js|config.cjs|yaml|yml|json|json5|toml))',
+    'tslint.@(yaml|yml|json)',
+    '.kylerc?(.@(yaml|yml|json))',
+  ];
+
+  const files = patterns.reduce((acc, pattern) => {
+    const results = glob.sync(pattern, { cwd });
+    return acc.concat(results || []);
+  }, []);
+
+  return files;
 };
 
 /**
- * 待重写的配置
+ * 待重写的配置（重写ejs文件，动态修改里面的配置）
  * @param cwd
  */
 const checkReWriteConfig = (cwd: string) => {

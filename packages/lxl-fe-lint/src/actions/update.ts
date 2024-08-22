@@ -9,7 +9,7 @@ import { PKG_NAME, PKG_VERSION } from '../utils/constants';
 
 
 /**
- * 检查最新版本号
+ * 检查 lxl-fe-lint 最新版本号
  */
 const checkLatestVersion = async (): Promise<string | null> => {
   // 指定包管理工具
@@ -37,8 +37,8 @@ const checkLatestVersion = async (): Promise<string | null> => {
 };
 
 /**
- * 检查包的版本，发现新版本自动安装
- * @param install - 自动安装最新包
+ * 检查 lxl-fe-lint 包的版本，发现新版本自动安装
+ * @param install - install = true自动安装最新包
  */
 export default async (install = true) => {
   const checking = ora(`[${PKG_NAME}] 正在检查最新版本...`);
