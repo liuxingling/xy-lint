@@ -9,5 +9,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/liuxingling/lxl-fe-lint-cli"
-  }
+  },
+  "gitHead": "e7d2fbdee55efd204a2382bdaf53d7f623676bdf"
 }
