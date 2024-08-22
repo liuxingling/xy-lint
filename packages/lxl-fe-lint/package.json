@@ -1,6 +1,6 @@
 {
   "name": "lxl-fe-lint",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "前端编码规范工程化脚手架",
   "bin": {
     "lxl-fe-lint": "./lib/cli.js"
