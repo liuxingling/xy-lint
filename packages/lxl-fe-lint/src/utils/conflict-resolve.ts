@@ -40,15 +40,21 @@ const packagePrefixesToRemove = [
  * @param cwd
  */
 const checkUselessConfig = (cwd: string): string[] => {
-  return ([] as string[])
-    .concat(glob.sync('.eslintrc?(.@(yaml|yml|json))', { cwd }))
-    .concat(glob.sync('.stylelintrc?(.@(yaml|yml|json))', { cwd }))
-    .concat(glob.sync('.markdownlint@(rc|.@(yaml|yml|jsonc))', { cwd }))
-    .concat(
-      glob.sync('.prettierrc?(.@(cjs|config.js|config.cjs|yaml|yml|json|json5|toml))', { cwd }),
-    )
-    .concat(glob.sync('tslint.@(yaml|yml|json)', { cwd }))
-    .concat(glob.sync('.kylerc?(.@(yaml|yml|json))', { cwd }));
+  const patterns = [
+    '.eslintrc?(.@(yaml|yml|json))',
+    '.stylelintrc?(.@(yaml|yml|json))',
+    '.markdownlint@(rc|.@(yaml|yml|jsonc))',
+    '.prettierrc?(.@(cjs|config.js|config.cjs|yaml|yml|json|json5|toml))',
+    'tslint.@(yaml|yml|json)',
+    '.kylerc?(.@(yaml|yml|json))',
+  ];
+
+  const files = patterns.reduce((acc, pattern) => {
+    const results = glob.sync(pattern, { cwd });
+    return acc.concat(results || []);
+  }, []);
+
+  return files;
 };
 
 /**
