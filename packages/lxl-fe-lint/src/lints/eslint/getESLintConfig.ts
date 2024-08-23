@@ -13,9 +13,9 @@ import { getESLintConfigType } from './getESLintConfigType';
 /**
  * 获取 ESLint 配置
  */
-export function getESLintConfig(opts: ScanOptions, pkg: PKG, config: Config): ESLint.LegacyOptions & ESLint.Options {
+export function getESLintConfig(opts: ScanOptions, pkg: PKG, config: Config): ESLint.Options {
   const { cwd, fix, ignore } = opts;
-  const lintConfig: ESLint.LegacyOptions & ESLint.Options = {
+  const lintConfig: ESLint.Options = {
     cwd, // 当前工作目录
     fix, // 是否启用自动修复
     ignore, // 是否启用忽略规则

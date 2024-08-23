@@ -1,7 +1,5 @@
 # 脚手架
 ## 全局安装
-npm install lxl-fe-lint -g
-
 # 更新到最新版本
 pnpm install -g lxl-fe-lint@latest
 
