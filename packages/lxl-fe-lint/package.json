@@ -1,6 +1,6 @@
 {
   "name": "lxl-fe-lint",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "前端编码规范工程化脚手架",
   "bin": {
     "lxl-fe-lint": "./lib/cli.js"
@@ -40,7 +40,7 @@
     "inquirer": "^7.3.3",
     "is-docker": "^2.1.1",
     "lodash": "^4.17.21",
-    "lxl-markdownlint-config": "^0.0.9",
+    "lxl-markdownlint-config": "^0.0.10",
     "markdownlint": "^0.34.0",
     "markdownlint-rule-helpers": "^0.25.0",
     "ora": "^5.1.0",
