@@ -136,14 +136,17 @@ export default async (options: InitOptions) => {
     pkg = await conflictResolve(cwd, options.rewriteConfig);
     log.success(`Step ${step}. 已完成项目依赖和配置冲突检查处理 :D`);
 
-    // 安装依赖
+    // 安装依赖 lxl-fe-lint
     if(!disableNpmInstall){
       log.info(`Step ${++step}. 安装依赖`);
       const npm = await npmType;
       spawn.sync(
         npm,
         ['i', '-D', PKG_NAME],
-        { stdio: 'inherit', cwd },
+        { 
+          stdio: 'inherit', // 标准输入输出流继承父进程,子进程的输出可以直接显示在父进程的终端中
+          cwd
+        },
       );
       log.success(`Step ${step}. 安装依赖成功 :D`);
     }
@@ -155,11 +158,11 @@ export default async (options: InitOptions) => {
   if (!pkg.scripts) {
     pkg.scripts = {};
   }
-  // 添加自定义脚本用于扫描
+  // 添加自定义脚本用于扫描 "lxl-fe-lint-scan": "lxl-fe-lint scan",
   if (!pkg.scripts[`${PKG_NAME}-scan`]) {
     pkg.scripts[`${PKG_NAME}-scan`] = `${PKG_NAME} scan`;
   }
-  // 添加自定义脚本用于修复
+  // 添加自定义脚本用于修复 "lxl-fe-lint-fix": "lxl-fe-lint fix"
   if (!pkg.scripts[`${PKG_NAME}-fix`]) {
     pkg.scripts[`${PKG_NAME}-fix`] = `${PKG_NAME} fix`;
   }
@@ -168,7 +171,9 @@ export default async (options: InitOptions) => {
   log.info(`Step ${++step}. 配置 git commit 卡点`);
   if (!pkg.husky) pkg.husky = {};
   if (!pkg.husky.hooks) pkg.husky.hooks = {};
+  // "pre-commit": "lxl-fe-lint commit-file-scan"
   pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
+  // "commit-msg": "lxl-fe-lint commit-msg-scan"
   pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
   log.success(`Step ${step}. 配置 git commit 卡点成功 :D`);

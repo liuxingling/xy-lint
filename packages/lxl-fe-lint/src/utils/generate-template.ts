@@ -12,7 +12,6 @@ import {
   STYLELINT_IGNORE_PATTERN,
   MARKDOWN_LINT_IGNORE_PATTERN,
 } from './constants';
-
 /**
  * vscode 配置合并
  * @param filepath
@@ -50,8 +49,9 @@ const mergeVSCodeConfig = (filepath: string, content: string) => {
  * @param vscode
  */
 export default (cwd: string, data: Record<string, any>, vscode?: boolean) => {
-  // 获得模板文件所在的绝对路径
+  // 获得模板文件所在的绝对路径,/Users/liuxingling/work2024/encode-pro/xy-lint-0802/packages/lxl-fe-lint/lib/config
   const templatePath = path.resolve(__dirname, '../config');
+  
   // 根据传入的模式在指定目录中同步查找文件。
   // _vscode/*.ejs 匹配 VSCode 专用的模板，**/*.ejs 匹配所有模板文件
   const templates = glob.sync(`${vscode ? '_vscode' : '**'}/*.ejs`, { cwd: templatePath });
