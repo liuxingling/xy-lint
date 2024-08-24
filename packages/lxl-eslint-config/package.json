@@ -1,6 +1,6 @@
 {
   "name": "lxl-eslint-config",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,14 +14,15 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
     "@babel/preset-react": "^7.16.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.1",
-    "@typescript-eslint/parser": "^8.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.7.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-plus": "^0.1.0",
     "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "typescript": "^4.1.2"
   },
   "gitHead": "0d098cf8bff85be548f88711ac6258780c81a9e4"
 }
