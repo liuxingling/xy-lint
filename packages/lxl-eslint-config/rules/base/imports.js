@@ -5,7 +5,7 @@
  * @see https://github.com/import-js/eslint-plugin-import/blob/main/config/recommended.js
  */
 
-export default {
+module.exports = {
   plugins: ['import'],
   settings: {
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],

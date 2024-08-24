@@ -2,13 +2,13 @@
  * 默认配置
  */
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-    commonjs: true,
-    es6: true,
-  },
+  // env: {
+  //   browser: true,
+  //   es2021: true,
+  //   node: true,
+  //   commonjs: true,
+  //   es6: true,
+  // },
   // 自定义规则集
   extends: [
     './rules/base/best-practices', // 最佳实践
@@ -17,10 +17,11 @@ module.exports = {
     './rules/base/variables', // 变量
     './rules/base/es6', // ES6
     './rules/base/strict', // 不限制严格模式
-    './rules/imports', // 导入规则
-  ],
+    './rules/base/imports', // 导入规则
+  ].map(require.resolve),
   // 解析器
-  parser: '@typescript-eslint/parser',
+  // parser: '@typescript-eslint/parser',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     // 不需要单独的 Babel 配置文件
     requireConfigFile: false,
