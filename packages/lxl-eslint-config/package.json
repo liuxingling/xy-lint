@@ -1,6 +1,6 @@
 {
   "name": "lxl-eslint-config",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.16.3",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
-    "@babel/eslint-parser": "^7.16.3",
     "eslint": "^8.7.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
